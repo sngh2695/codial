@@ -1,6 +1,10 @@
+//Setting up our express server
 const express =require('express');
 const app = express();
 const port=8000;
+
+//use express router ,the path from where our home route will be routed.
+app.use('/',require('./routes/index'));
 
 app.listen(port,function(err){
     if(err){
