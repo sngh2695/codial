@@ -5,6 +5,11 @@
         </title>
     </head>
     <body>
-        <%= title %>      
+        <!-- including header as partials -->
+        <%- include('_header'); %> 
+        <h1> In home </h1>
+        <%= title %>  
+        <!-- including footer as partials -->
+        <%- include('_footer'); %>    
     </body>
 </html>
