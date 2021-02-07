@@ -1,3 +1,5 @@
 module.exports.profile=function(req,res){
-    res.end('<h1> In profile </h1>');
+   return res.render('users',{
+       posts:"Ths is a sunny day"
+   })
 }
