@@ -1,5 +1,15 @@
-<%- include('_header'); %> 
-<!-- This body will be rendered everytime a controller is rendered ,this is the
-variable part of any page and will be rendered to respective ejs files -->
-<%- body %>
-<%- include('_footer'); %> 
+<html>
+    <head>
+        <title>
+            Title from Layout
+        </title>
+        <link rel="stylesheet" href="/css/layout.css">
+    </head>
+    <body>
+        <%- include('_header'); %> 
+        <!-- This body will be rendered everytime a controller is rendered ,this is the
+        variable part of any page and will be rendered to respective ejs files -->
+        <%- body %>
+        <%- include('_footer'); %> 
+    </body>
+</html>
