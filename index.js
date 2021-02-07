@@ -3,6 +3,10 @@ const express =require('express');
 const app = express();
 const port=8000;
 
+//setting up our layouts
+const expressLayouts=require('express-ejs-layouts');
+app.use(expressLayouts);
+
 //use express router ,the path from where our home route will be routed.
 app.use('/',require('./routes/index'));
 
