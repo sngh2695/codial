@@ -10,5 +10,10 @@ router.get('/profile',userController.profile);
 //for users/posts
 router.get('/posts',post_controller.posts);
 
+//for sign in
+router.get('/sign-in',userController.sign_in);
+//for sign up
+router.get('/sign-up',userController.sign_up);
+
 
 module.exports=router;

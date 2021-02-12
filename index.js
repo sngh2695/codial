@@ -2,6 +2,7 @@
 const express =require('express');
 const app = express();
 const port=8000;
+const cookieParser=require('cookie-parser');
 const db=require('./config/mongoose');
 
 //setting up our layouts
@@ -9,6 +10,8 @@ const expressLayouts=require('express-ejs-layouts');
 //to use static files
 app.use(express.static('./assets'));
 app.use(expressLayouts);
+//use cookie parser middleware
+app.use(cookieParser());
 
 
 //extract styles and scripts from subpages into the layout
