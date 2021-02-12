@@ -4,6 +4,7 @@
             Title from Layout
         </title>
         <link rel="stylesheet" href="/css/layout.css">
+        <%- style %>
     </head>
     <body>
         <%- include('_header'); %> 
@@ -11,5 +12,6 @@
         variable part of any page and will be rendered to respective ejs files -->
         <%- body %>
         <%- include('_footer'); %> 
+        <%- script %>
     </body>
 </html>
