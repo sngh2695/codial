@@ -1,35 +1,34 @@
-//Setting up our express server
-const express =require('express');
+const express = require('express');
+const cookieParser = require('cookie-parser');
 const app = express();
-const port=8000;
-const cookieParser=require('cookie-parser');
-const db=require('./config/mongoose');
+const port = 8000;
+const expressLayouts = require('express-ejs-layouts');
+const db = require('./config/mongoose');
 
-//setting up our layouts
-const expressLayouts=require('express-ejs-layouts');
-//to use static files
-app.use(express.static('./assets'));
-app.use(expressLayouts);
-//use cookie parser middleware
+app.use(express.urlencoded());
+
 app.use(cookieParser());
 
+app.use(express.static('./assets'));
 
-//extract styles and scripts from subpages into the layout
-app.set('layout extractStyles',true);
-app.set('layout extractScripts',true);
+app.use(expressLayouts);
+// extract style and scripts from sub pages into the layout
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
 
-//use express router ,the path from where our home route will be routed.
 
-//setting up our view engine
-app.set('view engine','ejs');
-app.set('views','./views');
+// use express router
+app.use('/', require('./routes'));
 
-app.use('/',require('./routes/index'));
-app.listen(port,function(err){
-    if(err){
-        console.log(`Error in running the code : ${err}`) // This is called interpolation
+// set up the view engine
+app.set('view engine', 'ejs');
+app.set('views', './views');
+
+
+app.listen(port, function(err){
+    if (err){
+        console.log(`Error in running the server: ${err}`);
     }
-    else{
-        console.log(`Server is running at ${port} `); 
-    }
-})
+
+    console.log(`Server is running on port: ${port}`);
+});
