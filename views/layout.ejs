@@ -1,17 +1,22 @@
 <html>
     <head>
         <title>
-            Title from Layout
+            <%= title  %>
         </title>
         <link rel="stylesheet" href="/css/layout.css">
         <%- style %>
+        
     </head>
+
     <body>
-        <%- include('_header'); %> 
-        <!-- This body will be rendered everytime a controller is rendered ,this is the
-        variable part of any page and will be rendered to respective ejs files -->
+        <%- include('_header'); %>
+
         <%- body %>
-        <%- include('_footer'); %> 
+
+
+        <%- include('_footer'); %>
+
         <%- script %>
+        
     </body>
 </html>

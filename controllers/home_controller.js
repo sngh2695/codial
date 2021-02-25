@@ -1,8 +1,9 @@
-module.exports.home=function(req,res){
-    //accessing cookies
+module.exports.home = function(req, res){
     console.log(req.cookies);
-    //we can modify the cookie in the response as well
-    return res.render('home',{
-        title:"Home" //this title we are sending to the ejs from our backend controller
-    })
+    res.cookie('user_id', 25);
+    return res.render('home', {
+        title: "Home"
+    });
 }
+
+// module.exports.actionName = function(req, res){}
